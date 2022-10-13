@@ -1,0 +1,45 @@
+version: '3.5'
+
+services:
+  localstack:
+    image: localstack/localstack:latest
+    environment:
+      - SERVICES=sqs,sns
+      - AWS_DEFAULT_REGION=eu-central-1
+      - DEFAULT_REGION=eu-central-1
+      - EDGE_PORT=4566
+    ports:
+      - '4566-4597:4566-4597'
+    volumes:
+      - "${TMPDIR:-/tmp/localstack}:/tmp/localstack"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+
+  mysql:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'sgq-quality-compliance'
+      MYSQL_USER: 'sgq'
+      MYSQL_PASSWORD: 'sgq'
+      MYSQL_ROOT_PASSWORD: 'sgq'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    volumes:
+      - my-db:/var/lib/mysql
+
+  sgq_quality_compliance:
+    build:
+      context: ../sgq-quality-compliance/
+      dockerfile: ../sgq-quality-compliance/Dockerfile
+    ports:
+      - "8081:8081"
+    environment:
+      SPRING_DATASOURCE_URL: "jdbc:mysql://mysql:3306/sgq-quality-compliance?useSSL=false"
+    depends_on:
+      - mysql
+    restart: unless-stopped
+
+volumes:
+  my-db: null
