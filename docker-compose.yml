@@ -34,7 +34,7 @@ services:
       context: ../sgq-quality-compliance/
       dockerfile: ../sgq-quality-compliance/Dockerfile
     ports:
-      - "8081:8081"
+      - '8081:8081'
     environment:
       SPRING_DATASOURCE_URL: "jdbc:mysql://mysql:3306/sgq-quality-compliance?useSSL=false"
     depends_on:
