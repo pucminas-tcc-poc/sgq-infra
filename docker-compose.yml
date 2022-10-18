@@ -1,18 +1,22 @@
 version: '3.5'
 
 services:
-  localstack:
-    image: localstack/localstack:latest
-    environment:
-      - SERVICES=sqs,sns
-      - AWS_DEFAULT_REGION=eu-central-1
-      - DEFAULT_REGION=eu-central-1
-      - EDGE_PORT=4566
+
+  eureka:
+    image: springcloud/eureka
     ports:
-      - '4566-4597:4566-4597'
-    volumes:
-      - "${TMPDIR:-/tmp/localstack}:/tmp/localstack"
-      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "8761:8761"
+
+  sgq_api_gateway:
+    build:
+      context: ../sgq-api-gateway/
+      dockerfile: ../sgq-api-gateway/Dockerfile
+    ports:
+      - '8080:8080'
+    depends_on:
+      - eureka
+      - sgq_quality_compliance
+    restart: unless-stopped
 
   mysql:
     image: mysql:5.7
@@ -39,7 +43,21 @@ services:
       SPRING_DATASOURCE_URL: "jdbc:mysql://mysql:3306/sgq-quality-compliance?useSSL=false"
     depends_on:
       - mysql
+      - eureka
     restart: unless-stopped
+
+  # localstack:
+  #   image: localstack/localstack:latest
+  #   environment:
+  #     - SERVICES=sqs,sns
+  #     - AWS_DEFAULT_REGION=eu-central-1
+  #     - DEFAULT_REGION=eu-central-1
+  #     - EDGE_PORT=4566
+  #   ports:
+  #     - '4566-4597:4566-4597'
+  #   volumes:
+  #     - "${TMPDIR:-/tmp/localstack}:/tmp/localstack"
+  #     - "/var/run/docker.sock:/var/run/docker.sock"
 
 volumes:
   my-db: null
