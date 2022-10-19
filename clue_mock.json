@@ -1,0 +1,217 @@
+{
+	"standard-managements": [
+		{
+			"id": 1,
+			"standard_type": "ABNT NBR 16752:2020",
+			"description": "Desenho técnico: requisitos para apresentação em folhas de desenho",
+			"action_plan": "O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão.",
+			"ergonomy_risk": "Ao contrário da crença popular, o Lorem Ipsum não é simplesmente texto aleatório. "
+		},
+		{
+			"id": 2,
+			"standard_type": "ABNT NBR 15419",
+			"description": "Sistemas de gestão da qualidade: diretrizes para aplicação da ABNT NBR ISO 9001:2000 nas organizações educacionais",
+			"action_plan": "O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão.",
+			"ergonomy_risk": "Ao contrário da crença popular, o Lorem Ipsum não é simplesmente texto aleatório. "
+		},
+		{
+			"id": 3,
+			"standard_type": "ABNT NBR 16097:2012",
+			"description": "Solo: determinação do teor de umidade: métodos expeditos de ensaio",
+			"action_plan": "O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão.",
+			"ergonomy_risk": "Ao contrário da crença popular, o Lorem Ipsum não é simplesmente texto aleatório. "
+		},
+		{
+			"id": 4,
+			"standard_type": "ABNT NBR IEC 61000-4-30:2011",
+			"description": "Compatibilidade eletromagnética: parte 4-30: técnicas de medição e ensaio métodos de medição de qualidade de energia",
+			"action_plan": "O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão.",
+			"ergonomy_risk": "Ao contrário da crença popular, o Lorem Ipsum não é simplesmente texto aleatório. "
+		},
+		{
+			"id": 5,
+			"standard_type": "ABNT NBR NM 315:2017: NM 315:2017",
+			"description": "Ensaios não destrutivos: ensaio visual: procedimento”",
+			"action_plan": "O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão.",
+			"ergonomy_risk": "Ao contrário da crença popular, o Lorem Ipsum não é simplesmente texto aleatório. "
+		},
+		{
+			"id": 6,
+			"standard_type": "ABNT NBR 13030:1999",
+			"description": "Elaboração e apresentação de projeto de reabilitação de áreas degradadas pela mineração",
+			"action_plan": "O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão.",
+			"ergonomy_risk": "Ao contrário da crença popular, o Lorem Ipsum não é simplesmente texto aleatório. "
+		},
+		{
+			"id": 7,
+			"standard_type": "ABNT IEC/TS 60815-3",
+			"description": "Seleção e dimensionamento de isoladores para alta-tensão para uso sob condições de poluição: parte 3: isoladores poliméricos para sistemas de corrente alternada",
+			"action_plan": "O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão.",
+			"ergonomy_risk": "Ao contrário da crença popular, o Lorem Ipsum não é simplesmente texto aleatório. "
+		},
+		{
+			"id": 8,
+			"standard_type": "ABNT ISO 55000",
+			"description": "Gestão de ativos: visão geral, princípios e terminologia",
+			"action_plan": "O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão.",
+			"ergonomy_risk": "Ao contrário da crença popular, o Lorem Ipsum não é simplesmente texto aleatório. "
+		},
+		{
+			"id": 9,
+			"standard_type": "ABNT ISO GUIA 35",
+			"description": "Materiais de referência: princípios gerais e estatísticos para certificação",
+			"action_plan": "O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão.",
+			"ergonomy_risk": "Ao contrário da crença popular, o Lorem Ipsum não é simplesmente texto aleatório. "
+		},
+		{
+			"id": 10,
+			"standard_type": "ABNT ISO TS 14071:2018",
+			"description": "Gestão ambiental: avaliação do ciclo de vida: processos de análise crítica e competências do analista: requisitos adicionais e diretrizes para a ABNT NBR ISO 14044:2009",
+			"action_plan": "O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão.",
+			"ergonomy_risk": "Ao contrário da crença popular, o Lorem Ipsum não é simplesmente texto aleatório. "
+		},
+		{
+			"id": 11,
+			"standard_type": "ABNT ISO/IEC 17025",
+			"description": "Requisitos gerais para a competência de laboratórios de ensaio e calibração.",
+			"action_plan": "O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão.",
+			"ergonomy_risk": "Ao contrário da crença popular, o Lorem Ipsum não é simplesmente texto aleatório. "
+		},
+		{
+			"id": 12,
+			"standard_type": "ABNT ISO/IEC GUIA 2",
+			"description": "Normalização e atividades relacionadas: vocabulário geral.",
+			"action_plan": "O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão.",
+			"ergonomy_risk": "Ao contrário da crença popular, o Lorem Ipsum não é simplesmente texto aleatório. "
+		},
+		{
+			"id": 13,
+			"standard_type": "ABNT ISO/TR 14047:2016",
+			"description": "Gestão ambiental: avaliação do ciclo de vida: exemplos ilustrativos de como aplicar a ABNT NBR ISO 14044 a situações de avaliação de impacto",
+			"action_plan": "O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão.",
+			"ergonomy_risk": "Ao contrário da crença popular, o Lorem Ipsum não é simplesmente texto aleatório. "
+		},
+		{
+			"id": 14,
+			"standard_type": "ABNT ISO/TR 14049:2014",
+			"description": "Gestão ambiental: avaliação do ciclo de vida: exemplos ilustrativos de como aplicar a ABNT NBR ISO 14044 à definição de objetivo e escopo e à análise de inventário",
+			"action_plan": "O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão.",
+			"ergonomy_risk": "Ao contrário da crença popular, o Lorem Ipsum não é simplesmente texto aleatório. "
+		},
+		{
+			"id": 15,
+			"standard_type": "ABNT NBR 15421",
+			"description": "Projeto de estruturas resistentes a sismos: procedimento",
+			"action_plan": "O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão.",
+			"ergonomy_risk": "Ao contrário da crença popular, o Lorem Ipsum não é simplesmente texto aleatório. "
+		}
+	],
+
+	"consulting-advisories": [
+		{
+			"id": 1,
+			"company_name": "Louise e Henrique Publicidade e Propaganda Ltda",
+			"document": "41.935.845/0001-56",
+			"trade_name": "Louise e Henrique",
+			"mcc": "0156"
+		},
+		{
+			"id": 2,
+			"company_name": "Ian e Henry Adega Ltda",
+			"document": "78.002.550/0001-37",
+			"trade_name": "Ian e Henry",
+			"mcc": "0137"
+		},
+		{
+			"id": 3,
+			"company_name": "Alice e Giovanni Padaria ME",
+			"document": "08.701.013/0001-08",
+			"trade_name": "Alice e Giovanni",
+			"mcc": "0108"
+		},
+		{
+			"id": 4,
+			"company_name": "Clara e Alexandre Joalheria ME",
+			"document": "43.388.761/0001-75",
+			"trade_name": "Clara e Alexandre",
+			"mcc": "0175"
+		},
+		{
+			"id": 5,
+			"company_name": "Maya e Elisa Comercio de Bebidas ME",
+			"document": "41.233.125/0001-49",
+			"trade_name": "Maya e Elisa",
+			"mcc": "0149"
+		},
+		{
+			"id": 6,
+			"company_name": "Gabriel e Pedro Henrique Pães e Doces ME",
+			"document": "96.028.492/0001-00",
+			"trade_name": "Gabriel e Pedro",
+			"mcc": "0100"
+		},
+		{
+			"id": 7,
+			"company_name": "Guilherme e Oliver Pizzaria Ltda",
+			"document": "85.406.245/0001-76",
+			"trade_name": "Guilherme e Oliver",
+			"mcc": "0176"
+		},
+		{
+			"id": 8,
+			"company_name": "Emily e Betina Financeira Ltda",
+			"document": "06.111.201/0001-42",
+			"trade_name": "Emily e Betina",
+			"mcc": "8955"
+		},
+		{
+			"id": 9,
+			"company_name": "Esther e Márcio Esportes ME",
+			"document": "78.813.268/0001-30",
+			"trade_name": "Esther e Márcio",
+			"mcc": "0342"
+		},
+		{
+			"id": 10,
+			"company_name": "Malu e Aparecida Gráfica ME",
+			"document": "85.342.859/0001-31",
+			"trade_name": "Malu e Aparecida",
+			"mcc": "4597"
+		},
+		{
+			"id": 11,
+			"company_name": "Antônia e Matheus Assessoria Jurídica Ltda",
+			"document": "75.559.280/0001-71",
+			"trade_name": "Antônia e Matheus",
+			"mcc": "3397"
+		},
+		{
+			"id": 12,
+			"company_name": "Carlos e Osvaldo Entulhos Ltda",
+			"document": "65.172.535/0001-95",
+			"trade_name": "Carlos e Osvaldo",
+			"mcc": "3658"
+		},
+		{
+			"id": 13,
+			"company_name": "Sérgio e Geraldo Fotografias ME",
+			"document": "16.719.093/0001-49",
+			"trade_name": "Sérgio e Geraldo",
+			"mcc": "3870"
+		},
+		{
+			"id": 14,
+			"company_name": "Davi e Cláudio Marketing ME",
+			"document": "74.829.262/0001-08",
+			"trade_name": "Davi e Cláudio",
+			"mcc": "6306"
+		},
+		{
+			"id": 15,
+			"company_name": "Tatiane e Alessandra Pizzaria Delivery Ltda",
+			"document": "72.768.338/0001-07",
+			"trade_name": "Tatiane e Alessandra",
+			"mcc": "6716"
+		}
+	]
+}
