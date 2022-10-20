@@ -6,6 +6,34 @@ services:
     ports:
       - '8761:8761'
 
+  mysql:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'sgq-quality-compliance'
+      MYSQL_USER: 'sgq'
+      MYSQL_PASSWORD: 'sgq'
+      MYSQL_ROOT_PASSWORD: 'sgq'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    volumes:
+      - my-db:/var/lib/mysql
+
+  localstack:
+    image: localstack/localstack:latest
+    environment:
+      - SERVICES=sqs,sns
+      - AWS_DEFAULT_REGION=eu-central-1
+      - DEFAULT_REGION=eu-central-1
+      - EDGE_PORT=4566
+    ports:
+      - '4566-4597:4566-4597'
+    volumes:
+      - "${TMPDIR:-/tmp/localstack}:/tmp/localstack"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+
   clue_mock:
     image: clue/json-server
     volumes: 
@@ -24,20 +52,16 @@ services:
       - sgq_quality_compliance
     restart: unless-stopped
 
-  mysql:
-    image: mysql:5.7
-    restart: always
-    environment:
-      MYSQL_DATABASE: 'sgq-quality-compliance'
-      MYSQL_USER: 'sgq'
-      MYSQL_PASSWORD: 'sgq'
-      MYSQL_ROOT_PASSWORD: 'sgq'
+  sgq_compliance_api:
+    build:
+      context: ../sgq-compliance-api/
+      dockerfile: ../sgq-compliance-api/Dockerfile
     ports:
-      - '3306:3306'
-    expose:
-      - '3306'
-    volumes:
-      - my-db:/var/lib/mysql
+      - '8085:8085'
+    depends_on:
+      - eureka
+      - clue_mock
+    restart: unless-stopped 
 
   sgq_quality_compliance:
     build:
@@ -52,29 +76,17 @@ services:
       - eureka
     restart: unless-stopped
 
-  sgq_compliance_api:
+  sgq_quality_transparence:
     build:
-      context: ../sgq-compliance-api/
-      dockerfile: ../sgq-compliance-api/Dockerfile
+      context: ../sgq-quality-transparence/
+      dockerfile: ../sgq-quality-transparence/Dockerfile
     ports:
       - '8082:8082'
     depends_on:
       - eureka
-      - clue_mock
+      - sgq_api_gateway
+      - localstack
     restart: unless-stopped
-
-  localstack:
-    image: localstack/localstack:latest
-    environment:
-      - SERVICES=sqs,sns
-      - AWS_DEFAULT_REGION=eu-central-1
-      - DEFAULT_REGION=eu-central-1
-      - EDGE_PORT=4566
-    ports:
-      - '4566-4597:4566-4597'
-    volumes:
-      - "${TMPDIR:-/tmp/localstack}:/tmp/localstack"
-      - "/var/run/docker.sock:/var/run/docker.sock"
 
 volumes:
   my-db: null
