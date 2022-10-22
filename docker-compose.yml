@@ -6,6 +6,8 @@ services:
     ports:
       - '8761:8761'
 
+#SGQ microservices structure
+
   mysql:
     image: mysql:5.7
     restart: always
@@ -34,14 +36,7 @@ services:
       - "${TMPDIR:-/tmp/localstack}:/tmp/localstack"
       - "/var/run/docker.sock:/var/run/docker.sock"
 
-  clue_mock:
-    image: clue/json-server
-    volumes: 
-      - ./clue_mock.json:/data/db.json
-    ports:
-      - '80:80'
-
-  sgq_api_gateway:
+  sgq-api-gateway:
     build:
       context: ../sgq-api-gateway/
       dockerfile: ../sgq-api-gateway/Dockerfile
@@ -49,21 +44,10 @@ services:
       - '8080:8080'
     depends_on:
       - eureka
-      - sgq_quality_compliance
+      - sgq-quality-compliance
     restart: unless-stopped
 
-  sgq_compliance_api:
-    build:
-      context: ../sgq-compliance-api/
-      dockerfile: ../sgq-compliance-api/Dockerfile
-    ports:
-      - '8085:8085'
-    depends_on:
-      - eureka
-      - clue_mock
-    restart: unless-stopped 
-
-  sgq_quality_compliance:
+  sgq-quality-compliance:
     build:
       context: ../sgq-quality-compliance/
       dockerfile: ../sgq-quality-compliance/Dockerfile
@@ -76,7 +60,7 @@ services:
       - eureka
     restart: unless-stopped
 
-  sgq_quality_transparence:
+  sgq-quality-transparence:
     build:
       context: ../sgq-quality-transparence/
       dockerfile: ../sgq-quality-transparence/Dockerfile
@@ -84,8 +68,28 @@ services:
       - '8082:8082'
     depends_on:
       - eureka
-      - sgq_api_gateway
+      - sgq-api-gateway
       - localstack
+    restart: unless-stopped
+
+# External services structure
+
+  cluemock:
+    image: clue/json-server
+    volumes: 
+      - ./clue_mock.json:/data/db.json
+    ports:
+      - '80:80'
+
+  sgq-compliance-api:
+    build:
+      context: ../sgq-compliance-api/
+      dockerfile: ../sgq-compliance-api/Dockerfile
+    ports:
+      - '8085:8085'
+    depends_on:
+      - eureka
+      - cluemock
     restart: unless-stopped
 
 volumes:
